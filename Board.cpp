@@ -36,7 +36,6 @@ int Board::makeMove(int x, int y, Player player) {
     }
     grid.at(x).at(y) = player.getIcon();
     // check state
-    //cout << "Board State: " << boardState() << endl;
     return boardState();
 }
 
@@ -52,6 +51,8 @@ int Board::boardState() {
     vector<int> cols (size, 0);
     int diag {0};
     int antiDiag {0};
+
+    cout << "Pos filled: " + posFilled << endl;
 
     for (int r = 0; r < size; r++) {
         for (int c = 0; c < size; c++) {
@@ -73,11 +74,14 @@ int Board::boardState() {
                     || cols.at(r) == size || (cols.at(r) * -1) == size
                     || diag == size || (diag * -1) == size
                     || antiDiag == size || (antiDiag * -1) == size)
-                    return 1 ? toAdd == 1 : 2;
+                    return (toAdd == 1) ? 1 : 2;
             }
         }
     }
-    return 0 ? posFilled < size : 3;
+
+    cout << "Pos filled: " + posFilled << endl;
+
+    return (posFilled < size) ? 0 : 3;
 }
 
 /*   
