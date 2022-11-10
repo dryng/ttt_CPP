@@ -4,7 +4,7 @@ using std::string;
 
 // "this->" throws an error
 Player::Player(string playerName, string playerIcon)
-    :name {playerName}, icon {playerName} {
+    :name {playerName}, icon {playerIcon} {
 }
 
 string Player::getName() {

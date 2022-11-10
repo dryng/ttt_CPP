@@ -1,5 +1,5 @@
-#ifndef _BOARD_H_
-#define _BOARD_H_
+#ifndef _PLAYER_H_
+#define _PLAYER_H_
 
 #include <string>
 using std::string;
